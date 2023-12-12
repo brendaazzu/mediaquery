@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" href="https://talks.freelancerepublik.com/wp-content/uploads/2021/12/responsive-web.png" type="image/png">
+    <title>Media Query</title>
+      
+  </head>
+
+  <body>
+    <div id="screenSize"></div>
+
+    <script>
+      function checkScreenSize() {
+          var width = window.innerWidth;
+          var text = "";
+          var fontSize = 25;
+
+          if (width < 319) {
+              text = "Start";
+          } else if (width >= 319 && width <= 480) {
+              text = "Mobile";
+              fontSize = 50;
+          } else if (width >= 481 && width <= 1200) {
+              text = "Tablet";
+              fontSize = 100;
+          } else if (width >= 1201 && width <= 1600) {
+              text = "Laptop";
+              fontSize = 200;
+          } else if (width >= 1601) {
+              text = "Desktop";
+              fontSize = 400;
+          }
+
+          var screenSizeElement = document.getElementById("screenSize");
+          screenSizeElement.innerHTML = text;
+          screenSizeElement.style.fontSize = fontSize + "px";
+      }
+
+      window.addEventListener('resize', checkScreenSize);
+      checkScreenSize();
+    </script>
+  </body>
+
+</html>
